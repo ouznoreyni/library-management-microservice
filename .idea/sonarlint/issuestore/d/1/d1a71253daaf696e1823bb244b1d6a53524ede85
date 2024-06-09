@@ -1,0 +1,5 @@
+
+§
+java:S1192:"_Define a constant instead of duplicating this literal "Livre non trouvÃ© avec l'ID : " 3 times.(…ÿžÇúÿÿÿÿ8ÔÛÝèÿ1J$bb759b8f-6055-4d5a-a4dd-60419543b757
+—
+java:S6204-"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹8›ô¸ñÿ1

@@ -1,0 +1,124 @@
+-- Insert Authors
+INSERT INTO Author (name, biography, date_of_birth, created_at, updated_at)
+VALUES
+    ('J.K. Rowling', 'British author best known for her Harry Potter series', '1965-07-31', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Stephen King', 'American author of horror, supernatural fiction, and suspense novels', '1947-09-21', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Haruki Murakami', 'Japanese author of fiction and non-fiction works', '1949-01-12', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Agatha Christie', 'English writer known for her detective novels and short story collections', '1890-09-15', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Tolkien', 'English writer, poet, philologist, and university professor, best known as the author of the classic high fantasy works The Hobbit, The Lord of the Rings, and The Silmarillion.', '1892-01-03', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Margaret Atwood', 'Canadian poet, novelist, literary critic, essayist, teacher, environmental activist, and inventor', '1939-11-18', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('George Orwell', 'English novelist, essayist, journalist and critic, his work is marked by lucid prose, awareness of social injustice, opposition to totalitarianism, and outspoken support of democratic socialism', '1903-06-25', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Jane Austen', 'English novelist known primarily for her six major novels, which interpret, critique and comment upon the British landed gentry at the end of the 18th century', '1775-12-16', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Leo Tolstoy', 'Russian writer who is regarded as one of the greatest authors of all time', '1828-09-09', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Fyodor Dostoevsky', 'Russian novelist, philosopher, and short-story writer, whose psychological penetration into the darkest recesses of the human heart, together with his unsurpassed moments of illumination, had an immense influence on 20th-century fiction', '1821-11-11', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Virginia Woolf', 'English writer, considered one of the foremost modernists of the 20th century and a pioneer in the use of stream of consciousness as a narrative device', '1882-01-25', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Ernest Hemingway', 'American journalist, novelist, short-story writer, and sportsman, won the Nobel Prize in Literature in 1954', '1899-07-21', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Gabriel Garcia Marquez', 'Colombian novelist, short-story writer, screenwriter, and journalist, one of the most significant authors of the 20th century', '1927-03-06', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Emily Dickinson', 'American poet, lived much of her life in reclusive isolation', '1830-12-10', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Franz Kafka', 'German-speaking Bohemian writer, widely regarded as one of the major figures of 20th-century literature', '1883-07-03', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Mark Twain', 'American writer, humorist, entrepreneur, publisher, and lecturer, often called "The Great American Novelist"', '1835-11-30', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Herman Melville', 'American novelist, short-story writer, and poet, best known for his masterpiece Moby-Dick', '1819-08-01', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Edgar Allan Poe', 'American writer, editor, and literary critic, best known for his poetry and short stories, particularly his tales of mystery and the macabre', '1809-01-19', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Emily Bronte', 'English novelist and poet, best known for her only novel, Wuthering Heights', '1818-07-30', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Charles Dickens', 'English writer and social critic, created some of the world's best-known fictional characters', '1812-02-07', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- Insert Genres
+INSERT INTO Genre (name, description, created_at, updated_at)
+VALUES
+    ('Fantasy', 'Genre involving magical elements, often set in imaginary worlds', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Horror', 'Genre intended to frighten, scare, or disgust its readers or viewers', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Mystery', 'Genre of fiction that usually involves a mysterious death or crime to be solved', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Science Fiction', 'Genre of speculative fiction that typically deals with imaginative and futuristic concepts', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Romance', 'Genre focused on romantic love stories', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Thriller', 'Genre characterized by fast-paced plots, frequent action, and resourceful heroes', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Historical Fiction', 'Genre set in the past, often incorporating real historical events and people', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Literary Fiction', 'Genre that focuses on complex narratives, deep character development, and thematic exploration', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Biography', 'Genre focusing on the life story of a real person, written by someone other than the subject', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Poetry', 'Genre of literature that uses aesthetic and often rhythmic qualities of language', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Dystopian', 'Genre depicting a society characterized by human misery, oppression, disease, and overcrowding', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Young Adult', 'Genre aimed at a teenage audience, featuring adolescent protagonists', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Historical Non-Fiction', 'Non-fiction genre that examines past events or people', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Memoir', 'Genre of writing that deals with the writer''s own experiences', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Satire', 'Genre of literature that uses humor, irony, exaggeration, or ridicule to expose and criticize society', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Adventure', 'Genre involving exciting or dangerous experiences', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Crime', 'Genre that deals with the commission of crimes and their detection', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Self-Help', 'Genre of books that offer guidance and advice on personal growth, self-improvement, and achieving success', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Cookbook', 'Genre of book containing recipes and instructions on cooking and preparing food', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Travel', 'Genre of literature describing or documenting travel experiences', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- Insert Publishers
+INSERT INTO Publisher (name, address, contact_number, created_at, updated_at)
+VALUES
+    ('Penguin Random House', '123 Main St, New York, NY', '212-555-1234', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('HarperCollins', '456 Elm St, London, UK', '+44 20 1234 5678', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Simon & Schuster', '789 Oak St, San Francisco, CA', '415-555-5678', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Macmillan Publishers', '101 Maple Ave, Sydney, Australia', '+61 2 9876 5432', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Hachette Livre', '1 Cherry Ln, Paris, France', '+33 1 2345 6789', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+-- Insert Books
+INSERT INTO Book (title, isbn, published_date, status, created_at, updated_at, author_id, genre_id, publisher_id)
+VALUES
+    ('Harry Potter and the Philosopher''s Stone', '9780747532743', '1997-06-26', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 1, 1, 1),
+    ('The Shining', '9780385121675', '1977-01-28', 'SOLD_OUT', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 2, 2, 2),
+    ('Norwegian Wood', '9780375704024', '1987-08-20', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 3, 1, 1),
+    ('Murder on the Orient Express', '9780062073501', '1934-01-01', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 4, 3, 2),
+    ('The Hobbit', '9780547928227', '1937-09-21', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 5, 1, 3),
+    ('The Handmaid''s Tale', '9780385490818', '1985-06-14', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 6, 7, 4),
+    ('1984', '9780451524935', '1949-06-08', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 7, 4, 5),
+    ('Pride and Prejudice', '9780141439518', '1813-01-28', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 8, 8, 1),
+    ('War and Peace', '9780143039990', '1869-01-01', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 9, 7, 2),
+    ('Crime and Punishment', '9780143107637', '1866-01-01', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 10, 6, 3),
+    ('To the Lighthouse', '9780156907392', '1927-05-05', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 11, 8, 1),
+    ('The Old Man and the Sea', '9780684801223', '1952-09-01', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 12, 7, 2),
+    ('One Hundred Years of Solitude', '9780060883287', '1967-05-30', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 13, 7, 4),
+    ('The Complete Poems of Emily Dickinson', '9780316184137', '1924-01-01', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 14, 9, 5),
+    ('The Trial', '9780805209990', '1925-01-01', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 15, 8, 1),
+    ('The Adventures of Huckleberry Finn', '9780142437179', '1884-12-10', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 16, 8, 1),
+    ('Moby-Dick', '9780142437247', '1851-10-18', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 17, 8, 1),
+    ('The Fall of the House of Usher', '9780140437488', '1839-01-01', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 18, 2, 2),
+    ('Wuthering Heights', '9780141439556', '1847-12-19', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 19, 8, 1),
+    ('Great Expectations', '9780141439563', '1861-01-01', 'AVAILABLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 20, 8, 1);
+
+-- Insert Reviews
+INSERT INTO Review (book_id, reviewer_name, rating, comment, created_at, updated_at)
+VALUES
+    (1, 'HarryPotterFan123', 5, 'Absolutely magical!', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (2, 'HorrorFanatic', 4, 'Terrifying and thrilling.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (3, 'MurakamiReader', 4, 'Beautifully written.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (4, 'DetectiveEnthusiast', 4, 'A classic mystery!', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (5, 'FantasyLover', 5, 'A journey into imagination.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (6, 'DystopianFan', 3, 'Interesting concept but a bit slow.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (7, 'ClassicReader', 5, 'Timeless masterpiece.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (8, 'RomanceReader', 4, 'Heartwarming love story.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (9, 'FantasyEnthusiast', 5, 'Epic adventure!', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (10, 'HistoryBuff', 4, 'Intriguing historical backdrop.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (11, 'ModernistReader', 5, 'Groundbreaking narrative style.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (12, 'HemingwayFan', 4, 'Simple yet profound.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (13, 'MagicalRealismFan', 5, 'Surreal and captivating.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (14, 'PoetryLover', 5, 'Timeless verses.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (15, 'KafkaesqueReader', 4, 'Thought-provoking.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (16, 'AmericanClassicFan', 5, 'Adventures on the Mississippi.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (17, 'WhaleTaleReader', 4, 'A tale of obsession.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (18, 'GothicHorrorFan', 5, 'Eerie and atmospheric.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (19, 'BronteFan', 4, 'Passionate and haunting.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (20, 'DickensDevotee', 5, 'Dickensian charm.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (1, 'PotterheadForever', 5, 'Changed my life!', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (2, 'ShiningFan', 4, 'Chilling and unforgettable.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (3, 'HarukiFan', 5, 'Another Murakami masterpiece.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (4, 'CrimeNovelFan', 4, 'Classic Christie mystery.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (5, 'TolkienFanatic', 5, 'A journey there and back again.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (6, 'AtwoodLover', 4, 'Disturbingly plausible.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (7, 'OrwellFan', 5, 'A warning for the ages.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (8, 'JaneAustenFan', 4, 'Delightfully witty.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (9, 'RussianLiteratureFan', 5, 'A masterpiece of Russian literature.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (10, 'DostoevskyDevotee', 4, 'Psychologically intense.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (11, 'WoolfEnthusiast', 5, 'A stream of consciousness journey.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (12, 'GarciaMarquezFan', 4, 'Magical realism at its finest.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (13, 'DickinsonReader', 5, 'Poetry that speaks to the soul.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (14, 'KafkaAficionado', 4, 'A surreal exploration of bureaucracy.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (15, 'TwainFan', 5, 'Adventures with Huck and Jim.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (16, 'MelvilleDevotee', 4, 'The hunt for the great white whale.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (17, 'PoeFan', 5, 'Tales of mystery and macabre.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (18, 'BronteReader', 4, 'A tale of passion and revenge.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (19, 'DickensLover', 5, 'Victorian London comes to life.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    (20, 'ClassicLiteratureFan', 4, 'Timeless tales for the modern reader.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
