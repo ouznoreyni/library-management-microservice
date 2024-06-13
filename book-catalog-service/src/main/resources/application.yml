@@ -42,9 +42,9 @@ eureka:
       defaultZone: ${GATEWAY_SERVICE_URL:http://localhost:8761/eureka}
     healthcheck:
       enabled: false
-    enabled: true
-    fetch-registry: true
-    register-with-eureka: true
+    enabled: false
+    fetch-registry: false
+    register-with-eureka: false
     region: default
     registryFetchIntervalSeconds: 5
     availabilityZones:

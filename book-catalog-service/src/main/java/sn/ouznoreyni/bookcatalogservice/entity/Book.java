@@ -24,6 +24,7 @@ public class Book {
 
     private String title;
     private String isbn;
+    private String imageCoverUrl;
     private LocalDate publishedDate;
 
     @Enumerated(EnumType.STRING)
