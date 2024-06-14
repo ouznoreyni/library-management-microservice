@@ -37,14 +37,15 @@ eureka:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     status-page-url-path: ${management.endpoints.web.base-path}/info
     health-check-url-path: ${management.endpoints.web.base-path}/health
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: ${GATEWAY_SERVICE_URL:http://localhost:8761/eureka}
     healthcheck:
-      enabled: false
-    enabled: false
-    fetch-registry: false
-    register-with-eureka: false
+      enabled: true
+    enabled: true
+    fetch-registry: true
+    register-with-eureka: true
     region: default
     registryFetchIntervalSeconds: 5
     availabilityZones:
