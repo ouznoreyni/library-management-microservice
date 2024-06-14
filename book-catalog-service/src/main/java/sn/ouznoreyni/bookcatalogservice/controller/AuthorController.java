@@ -22,7 +22,7 @@ import java.util.List;
  * Controller class for managing authors.
  */
 @RestController
-@RequestMapping("/authors")
+@RequestMapping("/api/v1/authors")
 @Api(tags = "Author Management")
 public class AuthorController {
 

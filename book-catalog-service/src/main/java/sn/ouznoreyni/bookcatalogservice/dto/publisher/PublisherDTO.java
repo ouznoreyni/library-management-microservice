@@ -16,7 +16,9 @@ public class PublisherDTO {
     private String name;
     private String address;
     private String contactNumber;
+    private String email;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
 
 }

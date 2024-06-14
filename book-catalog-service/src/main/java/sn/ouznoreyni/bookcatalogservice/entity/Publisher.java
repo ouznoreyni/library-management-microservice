@@ -22,6 +22,7 @@ public class Publisher {
 
     private String name;
     private String address;
+    private String email;
     private String contactNumber;
 
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -30,7 +31,7 @@ public class Publisher {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "publisher", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @ToString.Exclude
     private List<Book> books;
 

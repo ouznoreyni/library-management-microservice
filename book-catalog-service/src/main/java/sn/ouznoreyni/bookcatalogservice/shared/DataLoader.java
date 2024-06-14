@@ -8,15 +8,9 @@ import sn.ouznoreyni.bookcatalogservice.dto.author.CreateAuthorDTO;
 import sn.ouznoreyni.bookcatalogservice.dto.book.CreateBookDTO;
 import sn.ouznoreyni.bookcatalogservice.dto.genre.CreateGenreDTO;
 import sn.ouznoreyni.bookcatalogservice.dto.publisher.CreatePublisherDTO;
-import sn.ouznoreyni.bookcatalogservice.entity.Author;
-import sn.ouznoreyni.bookcatalogservice.entity.Book;
-import sn.ouznoreyni.bookcatalogservice.entity.Genre;
-import sn.ouznoreyni.bookcatalogservice.repository.AuthorRepository;
-import sn.ouznoreyni.bookcatalogservice.repository.BookRepository;
-import sn.ouznoreyni.bookcatalogservice.repository.GenreRepository;
+
 import sn.ouznoreyni.bookcatalogservice.service.BookService;
 
-import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Locale;
 
@@ -72,7 +66,8 @@ public class DataLoader implements CommandLineRunner {
         return new CreatePublisherDTO(
                 faker.company().name(),
                 faker.address().fullAddress(),
-                faker.phoneNumber().cellPhone()
+                faker.phoneNumber().cellPhone(),
+                faker.internet().emailAddress()
         );
     }
 

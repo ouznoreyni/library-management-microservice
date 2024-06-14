@@ -19,7 +19,6 @@ public class AuthorMapper {
         return modelMapper.map(author, AuthorDTO.class);
     }
 
-
     public Author toAuthorEntity(AuthorDTO authorDTO) {
         return modelMapper.map(authorDTO, Author.class);
     }
@@ -32,10 +31,10 @@ public class AuthorMapper {
         return modelMapper.map(updateAuthorDTO, Author.class);
     }
 
-    public ListAuthorDTO toAuthorListDTO(Author book) {
+    public ListAuthorDTO toAuthorListDTO(Author author) {
         return ListAuthorDTO.builder()
-                .id(book.getId())
-                .name(book.getName())
+                .id(author.getId())
+                .name(author.getName())
                 .build();
     }
 
