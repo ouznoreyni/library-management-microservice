@@ -2,10 +2,10 @@ package sn.ouznoreyni.borrowingmanagementservice.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrowing.BorrowingCreateDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrowing.BorrowingDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrowing.BorrowingListDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrowing.BorrowingUpdateDto;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrowing.BorrowingCreateDTO;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrowing.BorrowingDTO;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrowing.BorrowingListDTO;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrowing.BorrowingUpdateDTO;
 import sn.ouznoreyni.borrowingmanagementservice.entity.Borrowing;
 
 @Component
@@ -17,19 +17,19 @@ public class BorrowingMapper {
         this.modelMapper = modelMapper;
     }
 
-    public BorrowingDto toBorrowingDTO(Borrowing borrowing) {
-        return modelMapper.map(borrowing, BorrowingDto.class);
+    public BorrowingDTO toBorrowingDTO(Borrowing borrowing) {
+        return modelMapper.map(borrowing, BorrowingDTO.class);
     }
 
-    public BorrowingListDto toBorrowingListDTO(Borrowing borrowing) {
-        return modelMapper.map(borrowing, BorrowingListDto.class);
+    public BorrowingListDTO toBorrowingListDTO(Borrowing borrowing) {
+        return modelMapper.map(borrowing, BorrowingListDTO.class);
     }
 
-    public Borrowing toBorrowing(BorrowingCreateDto borrowingCreateDTO) {
+    public Borrowing toBorrowing(BorrowingCreateDTO borrowingCreateDTO) {
         return modelMapper.map(borrowingCreateDTO, Borrowing.class);
     }
 
-    public void updateBorrowingFromDTO(BorrowingUpdateDto borrowingUpdateDTO, Borrowing borrowing) {
+    public void updateBorrowingFromDTO(BorrowingUpdateDTO borrowingUpdateDTO, Borrowing borrowing) {
         modelMapper.map(borrowingUpdateDTO, borrowing);
     }
 }

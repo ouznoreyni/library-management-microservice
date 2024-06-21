@@ -1,13 +1,13 @@
 
 server:
-  port: 8082
+  port: 0
 
 spring:
   application:
     name: borrowing-management-service
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:db-borrowing
     username: sa
     password: password
   h2:
@@ -27,11 +27,14 @@ logging:
   level:
     ROOT: info
     org.hibernate.SQL: info
-    sn.ouznoreyni.bookcatalogservice: info
+    sn.ouznoreyni.borrowingmanagementservice: info
 
 
 eureka:
   instance:
+    appname: ${spring.application.name}
+    virtual-host-name: ${spring.application.name}
+    secure-virtual-host-name: ${spring.application.name}
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
@@ -42,7 +45,7 @@ eureka:
     service-url:
       defaultZone: ${GATEWAY_SERVICE_URL:http://localhost:8761/eureka}
     healthcheck:
-      enabled: false
+      enabled: true
     enabled: true
     fetch-registry: true
     register-with-eureka: true
@@ -95,6 +98,12 @@ management:
       percentiles:
         all: 0, 0.5, 0.75, 0.95, 0.99, 1.0
 
-
-
-
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    try-it-out-enabled: false
+    filter: false
+    syntax-highlight:
+      activated: true

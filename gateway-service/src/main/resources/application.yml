@@ -6,6 +6,9 @@ server:
 
   cloud:
     gateway:
+      discovery:
+        locator:
+          lowerCaseServiceId: true
       globalcors:
         corsConfigurations:
           '[/**]':

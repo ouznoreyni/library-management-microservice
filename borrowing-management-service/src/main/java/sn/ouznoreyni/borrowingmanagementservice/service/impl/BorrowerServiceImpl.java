@@ -7,10 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerCreateDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerListDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerUpdateDto;
+import sn.ouznoreyni.borrowingmanagementservice.clients.BookRestClient;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerCreateDTO;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerDTO;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerUpdateDTO;
 import sn.ouznoreyni.borrowingmanagementservice.entity.Borrower;
 import sn.ouznoreyni.borrowingmanagementservice.exception.ResourceNotFoundException;
 import sn.ouznoreyni.borrowingmanagementservice.mapper.BorrowerMapper;
@@ -25,14 +25,14 @@ public class BorrowerServiceImpl implements BorrowerService {
 
     private final BorrowerRepository borrowerRepository;
     private final BorrowerMapper borrowerMapper;
-
     /**
      * Retrieves a borrower by its ID
+     *
      * @param id The ID of the borrower to retrieve
      * @return The BorrowerDto object corresponding to the borrower
      */
     @Override
-    public BorrowerDto getBorrowerById(Long id) {
+    public BorrowerDTO getBorrowerById(Long id) {
         logger.info("Fetching borrower with ID: {}", id);
         Borrower borrower = borrowerRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Emprunteur non trouvé avec l'ID : " + id));
@@ -41,36 +41,40 @@ public class BorrowerServiceImpl implements BorrowerService {
 
     /**
      * Retrieves all borrowers with pagination
+     *
      * @param pageable The pagination parameters
      * @return A Page containing the BorrowerListDto objects corresponding to the borrowers
      */
     @Override
-    public Page<BorrowerListDto> getAllBorrowers(Pageable pageable) {
+    public Page<BorrowerDTO> getAllBorrowers(Pageable pageable) {
         logger.info("Fetching all borrowers with pagination");
-        return borrowerRepository.findAll(pageable).map(borrowerMapper::toBorrowerListDTO);
+        return borrowerRepository.findAll(pageable).map(borrowerMapper::toBorrowerDTO);
     }
 
     /**
      * Creates a new borrower
+     *
      * @param borrowerCreateDTO The data for the borrower to create
      * @return The BorrowerDto object corresponding to the newly created borrower
      */
     @Override
-    public BorrowerDto createBorrower(BorrowerCreateDto borrowerCreateDTO) {
+    public BorrowerDTO createBorrower(BorrowerCreateDTO borrowerCreateDTO) {
         logger.info("Creating new borrower: {}", borrowerCreateDTO);
-        Borrower borrower = borrowerMapper.toBorrower(borrowerCreateDTO);
-        borrower = borrowerRepository.save(borrower);
+
+        Borrower borrower = borrowerMapper.toBorrowerEntity(borrowerCreateDTO);
+       borrower = borrowerRepository.save(borrower);
         return borrowerMapper.toBorrowerDTO(borrower);
     }
 
     /**
      * Updates an existing borrower
-     * @param id The ID of the borrower to update
+     *
+     * @param id                The ID of the borrower to update
      * @param borrowerUpdateDTO The new data for the borrower
      * @return The BorrowerDto object corresponding to the updated borrower
      */
     @Override
-    public BorrowerDto updateBorrower(Long id, BorrowerUpdateDto borrowerUpdateDTO) {
+    public BorrowerDTO updateBorrower(Long id, BorrowerUpdateDTO borrowerUpdateDTO) {
         logger.info("Updating borrower with ID: {}", id);
         Borrower borrower = borrowerRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Emprunteur non trouvé avec l'ID : " + id));
@@ -81,6 +85,7 @@ public class BorrowerServiceImpl implements BorrowerService {
 
     /**
      * Deletes an existing borrower
+     *
      * @param id The ID of the borrower to delete
      */
     @Override

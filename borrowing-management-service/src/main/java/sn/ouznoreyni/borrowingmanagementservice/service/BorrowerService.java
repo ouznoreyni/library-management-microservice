@@ -2,19 +2,18 @@ package sn.ouznoreyni.borrowingmanagementservice.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerCreateDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerListDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerUpdateDto;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerCreateDTO;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerDTO;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerUpdateDTO;
 
 public interface BorrowerService {
-    BorrowerDto getBorrowerById(Long id);
+    BorrowerDTO getBorrowerById(Long id);
 
-    Page<BorrowerListDto> getAllBorrowers(Pageable pageable);
+    Page<BorrowerDTO> getAllBorrowers(Pageable pageable);
 
-    BorrowerDto createBorrower(BorrowerCreateDto borrowerCreateDTO);
+    BorrowerDTO createBorrower(BorrowerCreateDTO borrowerCreateDTO);
 
-    BorrowerDto updateBorrower(Long id, BorrowerUpdateDto borrowerUpdateDTO);
+    BorrowerDTO updateBorrower(Long id, BorrowerUpdateDTO borrowerUpdateDTO);
 
     void deleteBorrower(Long id);
 }

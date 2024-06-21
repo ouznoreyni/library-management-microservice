@@ -2,10 +2,9 @@ package sn.ouznoreyni.borrowingmanagementservice.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerCreateDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerListDto;
-import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerUpdateDto;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerCreateDTO;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerDTO;
+import sn.ouznoreyni.borrowingmanagementservice.dto.borrower.BorrowerUpdateDTO;
 import sn.ouznoreyni.borrowingmanagementservice.entity.Borrower;
 
 @Component
@@ -16,19 +15,16 @@ public class BorrowerMapper {
         this.modelMapper = modelMapper;
     }
 
-    public BorrowerDto toBorrowerDTO(Borrower borrower) {
-        return modelMapper.map(borrower, BorrowerDto.class);
+    public BorrowerDTO toBorrowerDTO(Borrower borrower) {
+        return modelMapper.map(borrower, BorrowerDTO.class);
     }
 
-    public BorrowerListDto toBorrowerListDTO(Borrower borrower) {
-        return modelMapper.map(borrower, BorrowerListDto.class);
-    }
 
-    public Borrower toBorrower(BorrowerCreateDto borrowerCreateDTO) {
+    public Borrower toBorrowerEntity(BorrowerCreateDTO borrowerCreateDTO) {
         return modelMapper.map(borrowerCreateDTO, Borrower.class);
     }
 
-    public void updateBorrowerFromDTO(BorrowerUpdateDto borrowerUpdateDTO, Borrower borrower) {
+    public void updateBorrowerFromDTO(BorrowerUpdateDTO borrowerUpdateDTO, Borrower borrower) {
         modelMapper.map(borrowerUpdateDTO, borrower);
     }
 }
